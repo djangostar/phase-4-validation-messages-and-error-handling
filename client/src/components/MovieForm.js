@@ -17,10 +17,6 @@ function MovieForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-<<<<<<< HEAD
-=======
-    // fetch returns a Promise, we must await it
->>>>>>> 003a59fdf471715bf952fe03a7de124edc8c1881
     const response = await fetch("/movies", {
       method: "POST",
       headers: {
@@ -28,11 +24,7 @@ function MovieForm() {
       },
       body: JSON.stringify(formData),
     });
-<<<<<<< HEAD
 
-=======
-    // response.json() returns a Promise, we must await it
->>>>>>> 003a59fdf471715bf952fe03a7de124edc8c1881
     const data = await response.json();
     if (response.ok) {
       console.log("Movie created:", data);
@@ -40,6 +32,7 @@ function MovieForm() {
       setErrors(data.errors);
     }
   }
+
   function handleChange(e) {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -139,11 +132,7 @@ function MovieForm() {
           </label>
         </FormGroup>
         {errors.length > 0 && (
-<<<<<<< HEAD
           <ul stule={{ color: "red" }}>
-=======
-          <ul style={{ color: "red" }}>
->>>>>>> 003a59fdf471715bf952fe03a7de124edc8c1881
             {errors.map((error) => (
               <li key={error}>{error}</li>
             ))}
